@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverScreen;
     [SerializeField] private TextMeshProUGUI _gameCurrentScore;
     [SerializeField] private TextMeshProUGUI _gameHighestScore;
+    [SerializeField] private GameObject _settingsScreen;
     private int _currentScore = 0;
+    private bool isLost = false;
 
     private void Awake()
     {
@@ -29,10 +31,11 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
+        isLost = true;
         _gameOverScreen.SetActive(true);
         if (_currentScore > PlayerPrefs.GetInt("HighScore"))
         {
-            PlayerPrefs.SetInt("HighScore",_currentScore);
+            PlayerPrefs.SetInt("HighScore", _currentScore);
             _gameHighestScore.text = _currentScore.ToString();
         }
         Time.timeScale = 0f;
@@ -47,5 +50,22 @@ public class GameManager : MonoBehaviour
     {
         _currentScore++;
         _gameCurrentScore.text = _currentScore.ToString();
+    }
+
+    public void openSettings()
+    {
+        if (!isLost)
+        {
+            _settingsScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+    public void resume()
+    {
+        _settingsScreen.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    public void exit(){
+        Application.Quit();
     }
 }
