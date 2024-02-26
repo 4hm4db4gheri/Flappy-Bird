@@ -12,7 +12,7 @@ public class MovementControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             rb.velocity = Vector2.up * velocity;
         }
