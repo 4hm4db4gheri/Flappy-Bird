@@ -14,7 +14,10 @@ public class MovementControll : MonoBehaviour
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            rb.velocity = Vector2.up * velocity;
+            if (!GameManager.instance.isInSettings)
+            {
+                rb.velocity = Vector2.up * velocity;
+            }
         }
     }
 

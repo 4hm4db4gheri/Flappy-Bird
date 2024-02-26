@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _settingsScreen;
     private int _currentScore = 0;
     private bool isLost = false;
+    public bool isInSettings = false;
 
     private void Awake()
     {
@@ -56,16 +57,19 @@ public class GameManager : MonoBehaviour
     {
         if (!isLost)
         {
-            _settingsScreen.SetActive(true);
             Time.timeScale = 0f;
+            isInSettings = true;
+            _settingsScreen.SetActive(true);
         }
     }
     public void resume()
     {
         _settingsScreen.SetActive(false);
         Time.timeScale = 1f;
+        isInSettings = false;
     }
-    public void exit(){
+    public void exit()
+    {
         Application.Quit();
     }
 }

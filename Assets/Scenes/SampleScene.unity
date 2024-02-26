@@ -1373,6 +1373,10 @@ PrefabInstance:
       value: B1 Red Sheet_0
       objectReference: {fileID: 0}
     - target: {fileID: 7322479139939081348, guid: a23feaf1d7a3acb449af59db52c27e97, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322479139939081348, guid: a23feaf1d7a3acb449af59db52c27e97, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -1829,6 +1833,7 @@ MonoBehaviour:
   _gameCurrentScore: {fileID: 2069056136}
   _gameHighestScore: {fileID: 1720756314}
   _settingsScreen: {fileID: 1699754902}
+  isInSettings: 0
 --- !u!4 &1668822836
 Transform:
   m_ObjectHideFlags: 0
@@ -1858,7 +1863,7 @@ GameObject:
   - component: {fileID: 1699754903}
   m_Layer: 5
   m_Name: Settings
-  m_TagString: Untagged
+  m_TagString: SettingsBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
