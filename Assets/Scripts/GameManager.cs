@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
     }
 
     private void Start()
