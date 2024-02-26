@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.TextCore.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -45,7 +41,6 @@ public class GameManager : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        _gameHighestScore.text = _currentScore.ToString();
     }
 
     public void gotScore()
